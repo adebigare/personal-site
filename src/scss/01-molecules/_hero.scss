@@ -1,0 +1,71 @@
+/*------------------------------------*\
+	#HERO BLOCK
+\*------------------------------------*/
+.hero { // external geometry and positioning
+    display: block;
+    position: relative;
+}
+
+/**
+ * Hero Image
+ * 1) This is the primary hero image that runs full-bleed across the layout
+ */
+.hero__img {
+    width: 100%;
+    max-height: 75vh;
+    object-fit: cover;
+
+}
+
+/**
+ * Hero Headline
+ * 1) This sits overtop of the hero image when space permits
+ */
+.hero__headline {
+    position: absolute;
+    padding: $baseline;
+    transition: .3s;
+    bottom: $baseline * 4;
+    left: $baseline * 2;
+
+    @include for-tablet-landscape-up {
+        max-width: 50%;
+    }
+ }
+
+.hero_headline_primary {
+    background: get-color('primary');
+    color: $white;
+
+    @include hover {
+        background: get-color('primary', 'dark');
+    }
+}
+
+.hero_headline_secondary {
+    background: get-color('secondary', 'light');
+    color: $white;
+
+    @include hover {
+        background: get-color('secondary', 'dark');
+    }
+}
+
+.hero_headline_accent {
+    background: get-color('accent', 'light');
+    color: $white;
+
+    @include hover {
+        background: get-color('accent', 'dark');
+    }
+}
+
+.hero_headline_secondary_accent {
+	background: get-color('secondary-accent', 'light');
+	color: $white;
+
+    @include hover {
+        background: get-color('secondary', 'dark');
+    }
+}
+

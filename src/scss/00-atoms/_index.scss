@@ -1,0 +1,75 @@
+// Atoms
+//
+// If atoms are the basic building blocks of matter, then the atoms of
+// our interfaces serve as the foundational building blocks that
+// comprise all our user interfaces. Therefore these atoms would include
+// basic HTML tags like form labels, inputs, buttons, and other elements
+// that can’t be broken down any further without ceasing to be functional.
+//
+// @source - http://atomicdesign.bradfrost.com/chapter-2/
+.atoms {
+	margin: $baseline * 2 auto;
+}
+
+.btn {
+
+	@include hover {
+		background-color: get-color('secondary', 'light', $opacity: 'light');
+		color: get-color('accent');
+	};
+
+	background-color: $color-secondary;
+	color: get-color('accent', 'dark');
+	text-align: center;
+	font-weight: $font-weight-ultra;
+	padding: $baseline;
+	font-size: map-get-deep($font-size, 'desktop-up', 'p');
+	text-transform: uppercase;
+	transition: .3s;
+
+}
+
+.img-16x9 {
+	@include grid-column(12);
+
+
+	@include for-tablet-landscape-up {
+		@include grid-column(8);
+	}
+
+	@include for-desktop-only {
+		@include grid-column(6);
+	}
+}
+
+.img-4x3 {
+	margin-top: $baseline;
+
+	@include grid-column(12);
+
+	// @include for-tablet-landscape-up {
+	// 	@include grid-column(8);
+	// }
+
+	// @include for-desktop-up {
+	// 	@include grid-column(6);
+	// }
+}
+
+.img-square {
+	@include grid-column(12);
+
+	@include for-tablet-landscape-up {
+		@include grid-column(4);
+	}
+}
+
+.img-square__small {
+	@include for-desktop-only {
+		@include grid-column(2);
+	}
+}
+
+.grid-container {
+	margin-top: $baseline;
+}

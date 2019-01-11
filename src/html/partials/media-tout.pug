@@ -1,0 +1,16 @@
+- var global = require('./../../assets/data/global.json')
+// - var toutClasses = ['']
+.tout
+	a(class="tout__link tout_background_simple" href=`${global.link}`)
+		img(class="tout__img img-4x3" src=require("./../../assets/images/fpo_4x3.png"))
+		.tout__desc
+			h2(class="tout__headline") See this thing
+			if global.toutTease
+				p.tout__tease #{global.toutTease}
+
+	a(class="tout__link tout_background_simple" href=`${global.link}`)
+		img(class="tout__img img-4x3" src=require("./../../assets/images/fpo_4x3.png"))
+		.tout__desc
+			h2(class="tout__headline") See this thing
+			if global.toutTease
+				p.tout__tease #{global.toutTease}

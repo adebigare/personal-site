@@ -1,0 +1,102 @@
+
+@mixin font($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file+'.eot');
+    src: url($font-file+'.eot?#iefix') format('embedded-opentype'),
+  url($font-file+'.woff') format('woff'),
+  url($font-file+'.otf') format('otf'),
+  url($font-file+'.svg#aller') format('svg');
+  }
+}
+
+$private-sassy-maps-suppress-warnings: false !default;
+
+//////////////////////////////
+// Map Get Deep
+//
+// Given a map and a list of keys, find the value at the given key
+//////////////////////////////
+@function map-get-deep($map, $keys...) {
+  @if length($keys) == 1 {
+    $keys: nth($keys, 1);
+  }
+  $warn: "#{nth($keys, 1)}";
+  $length: length($keys);
+  $get: map-get($map, nth($keys, 1));
+
+  @if $length > 1 {
+    @for $i from 2 through $length {
+      @if $get != null and type-of($get) == 'map' {
+        $warn: $warn + "->#{nth($keys, $i)}";
+        $get: map-get($get, nth($keys, $i));
+
+        @if $get == null {
+          @return map-get-deep-warning($warn, $get, nth($keys, $i));
+        }
+      }
+      @else {
+        @return map-get-deep-warning($warn, $get, nth($keys, $i));
+      }
+    }
+  }
+
+  @return $get;
+}
+
+//////////////////////////////
+// Map Get Deep Warning
+//
+// Displays a warning if the retrieved value is `null`
+//////////////////////////////
+@function map-get-deep-warning($warn, $get, $key) {
+  @if not $private-sassy-maps-suppress-warnings {
+    @if $get == null {
+      @warn "Map has no value for key search `#{$warn}`";
+    }
+    @else if type-of($get) != 'map' {
+      @warn "Non-map value found for key search `#{$warn}`, cannot search for key `#{$key}`";
+    }
+  }
+  @return null;
+}
+
+
+// ==========================================================================
+// $FONT-FACE
+// ==========================================================================
+
+@if variable-exists(google-fonts-url) {
+  @import url($google-fonts-url);
+}
+
+@if variable-exists(typefaces) {
+  @each $file, $option, $directory in $typefaces {
+    @font-face {
+      font-family: map-get-deep($typefaces, $file, family);
+      font-style: map-get(map-get($typefaces, $file), style);
+      font-weight: map-get(map-get($typefaces, $file), weight);
+      src: url('#{$directory}/#{$file}.otf') format('otf'),
+           url('#{$directory}/#{$file}.woff') format('woff'),
+           url('#{$directory}/#{$file}.woff2') format('woff2');
+    }
+  }
+  @debug "$file is #{file}";
+
+}
+
+
+// @if variable-exists(typefaces) {
+//   @each $file, $option in $typefaces {
+//     @font-face {
+//       font-family: map-get(map-get($typefaces, $file), family);
+//       font-style: map-get(map-get($typefaces, $file), style);
+//       font-weight: map-get(map-get($typefaces, $file), weight);
+//       src: url('../fonts/#{$file}.ttf') format('truetype'),
+//            url('../fonts/#{$file}.woff') format('woff'),
+//            url('../fonts/#{$file}.woff2') format('woff2');
+//     }
+//   }
+//   @debug "$file is #{file}";
+
+// }

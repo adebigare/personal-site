@@ -4,43 +4,67 @@
 // descriptive colors
 // =============
 
-$hopbush:                   #c69;
-$bouquet:                   #b37399;
-$venus:                     #998099;
-$patina:                    #699;
-$nebula:                    #d2e1dd;
-$white:                     #fff;
-$dawn-pink:                 #f2ece4;
-$wafer:                     #e1d7d2;
-$iron:                      #dadbdf;
-$regent-grey:               #808c99;
-$pale-sky:                  #6b717f;
-$midnight-blue:             #036;
-$black:                     #000;
+$sulphur-spring:            hsl(61, 81%, 47%); //yellow-green
+$living-coral:              hsl(5, 100%, 69%);
+$chive-blossom:             hsl(272, 24%, 48%); //lavendar-ish
+$vivacious:                 hsl(337, 61%, 40%); //red-purple
+$barrier-reef:              hsl(191, 100%, 32%); //blue-green
+$deep-lake:                 hsl(183, 100%, 21%); //green-blue
+$ibiza-blue:                hsl(199, 100%, 36%); //cerulean
+$pink-lemonade:             hsl(347, 79%, 68%);
+$white:                     white;
 
-// main color palette
+
+// color palette mapping
 // =============
-$color-primary:             $hopbush;
-$color-secondary:           $bouquet;
-$color-accent:              $patina;
-$color-shadow:              rgba($black, .125);
+$color-key: 'base' !default;
+
+$brand-colors: (
+  'primary': (
+    'base': $vivacious,
+    'light': tint($vivacious),
+    'dark': shade($vivacious)
+  ),
+  'secondary': (
+    'base': $sulphur-spring,
+    'light': tint($sulphur-spring),
+    'dark': shade($sulphur-spring)
+  ),
+  'accent': (
+    'base': $living-coral,
+    'light': tint($living-coral),
+    'dark': shade($living-coral)
+  ),
+  'secondary-accent': (
+    'base': $ibiza-blue,
+    'light': tint($ibiza-blue),
+    'dark': shade($ibiza-blue)
+  )
+);
+
+
+$color-primary:             get-color();
+$color-secondary:           get-color('secondary');
+$color-accent:              get-color('accent');
+$color-secondary-accent:    get-color('secondary-accent');
+$color-shadow:              get-color('primary', 'dark');
 $color-note:                #666;
 
 // Common colors
-$color-background:          $white;
-$color-background-shade:    $iron;
-$color-background-invert:   $hopbush;
-$color-text:                darken($pale-sky, 15);
-$color-text-weak:           $regent-grey;
-$color-text-strong:         $midnight-blue;
-$color-text-heading:        $regent-grey;
-$color-text-invert:         rgba($color-background, .75);
-$color-text-strong-invert:  $color-background;
+$color-background:          white;
+// $color-background-shade:    $iron;
+// $color-background-invert:   $nebula;
+$color-text:                get-color('primary', 'dark');
+// $color-text-weak:           $regent-grey;
+// $color-text-strong:         $midnight-blue;
+// $color-text-heading:        $regent-grey;
+// $color-text-invert:         rgba($color-background, .75);
+// $color-text-strong-invert:  $color-background;
 
 // Links
 $color-link:                $color-primary;
-$color-link-hover:          $midnight-blue;
-$color-link-visited:        $bouquet;
+$color-link-hover:          $color-accent;
+$color-link-visited:        $color-accent;
 
 // Code
 $color-code:                #333;

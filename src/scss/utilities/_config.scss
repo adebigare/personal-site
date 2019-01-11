@@ -1,7 +1,7 @@
 // Variables
 
 // Configurations
-
+$transition: 0.3s linear;
 // $fix-mqs
 //
 // Define width for browsers w/out media query support
@@ -22,20 +22,6 @@ $old-ie:                      false !default;
 
 // $breakpoints
 //
-// Define major breakpoints
-// There are no common breakpoints; examples based on the official Sass styleguide
-// You'll need to define your own breakpoints to suit your design
-//
-// $breakpoints - {map}
-
-$breakpoints: (
-  xsmall:                     null,
-  small:                      480,
-  medium:                     768,
-  large:                      1024,
-  xlarge:                     1280,
-);
-
 // $zindex
 //
 // Define z-indexes for various elements

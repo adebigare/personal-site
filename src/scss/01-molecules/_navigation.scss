@@ -1,0 +1,40 @@
+.primary-nav {
+	min-height: $baseline*4;
+	width: 95%;
+	background-color: $white;
+}
+
+.primary-nav__logo {
+	margin-left: auto;
+	margin-right: auto;
+	float: left;
+	width: 100%;
+	height: 100%;
+
+	@include for-tablet-landscape-up {
+		@include grid-column(6);
+	}
+
+}
+
+.primary-nav__links {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: column;
+	list-style-type: none;
+
+	@include for-tablet-landscape-up {
+		flex-direction: row;
+	}
+}
+
+.primary-nav__item {
+	align-self: center;
+	padding: $baseline;
+	font-size: map-get-deep($font-size, 'mobile-up', 'h3');
+
+	@include for-desktop-up {
+		font-size: map-get-deep($font-size, 'desktop-up', 'h3');
+	}
+}

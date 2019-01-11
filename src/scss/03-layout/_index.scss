@@ -1,0 +1,48 @@
+// @source http://smacss.com/book/type-layout
+//
+// Layout Rules
+//
+// Layout styles can also be divided into major and minor styles based on
+// reuse. Major layout styles such as header and footer are traditionally
+// styled using ID selectors but take the time to think about the elements
+// that are common across all components of the page and use class selectors
+// where appropriate.
+
+// TO DO MOBILE GRID
+// $neat-grid-mobile: (
+// 	columns: 12,
+// 	gutter: 5px
+// );
+
+//Scaffolding
+
+.grid-container {
+	@include grid-container;
+	margin-top: 1.813rem;
+}
+
+.box-3 {
+	@include grid-column(3);
+}
+
+.box-6 {
+	@include grid-column(6);
+}
+
+.box-9 {
+	@include grid-column(9);
+}
+
+.box-12 {
+	@include grid-column(12);
+}
+
+.scaffolding {
+	margin-bottom: 1em;
+}
+
+.scaffolding-title {
+	background-color: #cfd7dd;
+	color: white;
+	padding: .5em .25em;
+}

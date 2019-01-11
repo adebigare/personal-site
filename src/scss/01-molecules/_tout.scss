@@ -1,0 +1,98 @@
+.tout {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-content: space-around;
+	// flex-wrap: wrap;
+	width: 100%;
+
+	@include for-tablet-landscape-up {
+		flex-direction: row;
+	}
+}
+
+.tout_background_simple {
+	background-color: $white;
+	border: $baseline solid transparent;
+	clip-path: polygon(
+	  calc(0% + 13px) calc(0% + 13px), /* top left */
+	  calc(100% - 13px) calc(0% + 13px), /* top right */
+	  calc(100% - 13px) calc(100% - 13px), /* bottom right */
+	  calc(0% + 13px) calc(100% - 13px) /* bottom left */
+	);
+	transition: clip-path $transition;
+
+	@include hover {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		border-image-source: linear-gradient(to bottom right, get-color('primary'), get-color('accent'));
+		border-image-slice: 20;
+		border-radius: 2px;
+
+	}
+
+}
+
+.tout__link {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include for-tablet-portrait-up {
+		padding: $baseline/2;
+	}
+
+}
+
+.tout__desc {
+	position: absolute;
+	top: $baseline * 4;
+	border-radius: 2px;
+	background: get-color('secondary', 'light', map-get($named-opacity, 'mid'));
+	// background: linear-gradient(get-color('accent', 'light', map-get($named-opacity, 'light')), get-color('accent', map-get($named-opacity, 'light')));
+	padding: $baseline;
+	mix-blend-mode: lighten;
+
+	@include grid-column(10);
+
+	@include for-tablet-portrait-up {
+		top: $baseline * 8;
+		// @include grid-column(8);
+	}
+
+	@include for-tablet-landscape-up {
+		@include grid-column(11);
+		top: $baseline*9;
+		left: $baseline;
+		margin: $baseline;
+
+	}
+	@include for-desktop-up {
+		top: $baseline * 5;
+		left: $baseline;
+
+	}
+
+}
+
+.tout__tease {
+	color: $white;
+}
+
+.tout__headline {
+	color: $white;
+	mix-blend-mode: screen;
+
+}
+
+.tout__img {
+	filter: blur(3px);
+	margin: 0;
+	object-fit: cover;
+	transition: filter $transition;
+	width: 100%;
+
+	@include hover {
+		filter: none;
+	}
+
+}

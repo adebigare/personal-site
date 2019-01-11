@@ -130,3 +130,57 @@
     @warn 'No breakpoint found for `#{inspect($point...)}` in $breakpoints map. Property omitted.';
   } @return map-deep-get($breakpoints, $point...);
 }
+
+//Tint/Shade Colors
+//
+//Keep t/s consistent w/global interval
+
+$global-color-percentage: 10% !global;
+
+/// Slightly lighten a color
+@function tint($color, $level: 4) {
+  @return mix(white, $color, $level * $global-color-percentage);
+}
+
+
+/// Slightly darken a color
+@function shade($color, $level: 4) {
+  @return mix(black, $color, $level * $global-color-percentage);
+}
+
+
+// Color parsing
+//
+// Based on https://scotch.io/tutorials/aesthetic-sass-2-colors
+
+$named-opacity: (
+  'light': .2,
+  'mid': .5,
+  'dark': .8
+);
+
+@function get-color(
+  $name: 'primary',
+  $variant: $color-key,
+  $opacity: 1
+) {
+  $color: null;
+
+  // Get the color spectrum
+  $color-spectrum: map-get($brand-colors, $name);
+
+  // Get the color variant
+  @if $color-spectrum {
+    $color: map-get($color-spectrum, $variant);
+  }
+
+  // Get the alpha setting
+  $alpha: if(type-of($opacity) == 'number', $opacity, map-get($named-opacity, $opacity));
+
+  // Set the alpha of the color
+  @if $alpha {
+    $color: rgba($color, $alpha);
+  }
+
+  @return $color;
+}

@@ -4,40 +4,130 @@ html {
   background-color: $color-background;
   box-sizing: border-box;
   height: 100%;
+  font-size: $base-font-size;
 }
 
 * {
   &:before,
-  &:after { box-sizing: inherit; }
+  &:after {
+    box-sizing: inherit;
+  }
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
+
+  @include grid-container;
+  // @include grid-visual;
+
+  align-items: baseline;
   color: $color-text;
   font-family: $font-family-default;
+  font-smoothing: antialiased;
+  line-height: $baseline * 2;
   min-height: 100%;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
 }
 
-a {
-  background: transparent;
-  color: $color-link;
-  text-decoration: none;
-  transition: color .2s;
-}
-
-img {
-  height: auto;
+p {
+  margin-bottom: $baseline * 2;
   max-width: 100%;
+  width: 36em;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $font-family-display;
-  font-weight: normal;
+a {
+
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+  transition: .4s;
 }
+
+.link {
+  @include hover {
+    background-color: get-color('secondary', 'light');
+    color: get-color('primary', 'dark');
+  }
+}
+
+.underline {
+  background-image: linear-gradient(get-color('secondary'), get-color('secondary', 'light'));
+  background-position: 0 1.3em;
+  background-repeat: repeat-x;
+  background-size: 8px 3px;
+
+  @include hover {
+    background-image: none;
+  }
+}
+
+ h1 {
+  font-size: map-get-deep($font-size, 'mobile-up', 'h1');
+  font-style: italic;
+  font-weight: $font-weight-thin;
+  line-height: $baseline * 6;
+
+  @include for-desktop-up {
+    font-size: map-get-deep($font-size, 'desktop-up', 'h1');
+    line-height: $baseline * 8;
+  }
+}
+
+h2 {
+  font-size: map-get-deep($font-size, 'mobile-up', 'h2');
+  font-weight: $font-weight-ultra;
+  line-height: $baseline;
+
+  @include for-desktop-only {
+    font-size: map-get-deep($font-size, 'desktop-up', 'h2');
+    line-height: $baseline * 3;
+
+  }
+}
+
+h3 {
+  font-size: map-get-deep($font-size, 'mobile-up', 'h3');
+  font-weight: $font-weight-default;
+
+  @include for-desktop-only {
+    font-size: map-get-deep($font-size, 'desktop-up', 'h3');
+  }
+}
+
+h4 {
+  font-size: map-get-deep($font-size, 'mobile-up', 'h4');
+  font-weight: $font-weight-thin;
+  font-style: italic;
+
+  @include for-desktop-only {
+    font-size: map-get-deep($font-size, 'desktop-up', 'h4');
+  }
+}
+
+h5 {
+  font-size: map-get-deep($font-size, 'mobile-up', 'h5');
+  font-weight: $font-weight-default;
+  line-height: $baseline;
+
+  @include for-desktop-only {
+    font-size: map-get-deep($font-size, 'desktop-up', 'h5');
+  }
+}
+
+h6 {
+  font-size: map-get-deep($font-size, 'mobile-up', 'h6');
+  font-weight: $font-weight-default;
+  text-transform: uppercase;
+  line-height: $baseline;
+
+  @include for-desktop-only {
+    font-size: map-get-deep($font-size, 'desktop-up', 'h6');
+  }
+}
+
+hr {
+  color: get-color('primary', 'light');
+  margin: $baseline 0;
+  @include grid-column(12);
+}
+

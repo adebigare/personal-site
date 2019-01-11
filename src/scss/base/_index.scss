@@ -11,3 +11,19 @@
 // $Base
 // ==========================================================================
 @import 'base';
+
+.primary {
+	background-color: $color-primary;
+}
+
+.secondary {
+	background-color: $color-secondary;
+}
+
+.accent {
+	background-color: $color-accent;
+}
+
+.accentSecond {
+	background-color: $color-secondary-accent;
+}

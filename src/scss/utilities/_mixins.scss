@@ -49,18 +49,31 @@
 
 // Media Queries
 //
-// Allows you to use inline media queries. Includes options for `$fix-mqs`.
-//
-// $breakpoint - Desired breakpoint. Can be variable or unit.
-// $query - Defaults to `min-width`.
-// $type - Defaults to `screen`.
+// Based on https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
 
-@mixin mq($breakpoint, $query: 'min-width', $type: 'screen') {
-  @if $fix-mqs {
-    @if $fix-mqs >= $breakpoint { @content; }
-  } @else {
-    @media #{$type} and (#{$query}: #{$breakpoint}) { @content; }
-  }
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-portait-only {
+  @media (min-width: 600px) and (max-width: 899px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-tablet-landscape-only {
+  @media (min-width: 900px) and (max-width: 1199px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-desktop-only {
+  @media (min-width: 1200px) and (max-width: 1799px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
 }
 
 // Clearfix
@@ -141,3 +154,13 @@
 // @usage - `@include invisible`
 
 @mixin invisible { visibility: hidden; }
+
+// Animation Transitions
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
