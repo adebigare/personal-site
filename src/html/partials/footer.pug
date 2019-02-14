@@ -1,6 +1,18 @@
 //- extends /../index.pug
 
 //- block footer
-.footer
-	p I'm the footer
-	p with more test
+footer.footer
+	nav
+		ul.footer__links
+			li.footer__logo
+				img(src=require('./../../assets/images/svg/logo-stacked-primary-outlines-purp.svg'))
+			li.footer__link.link__knockout
+				i(class="far fa-file-alt")
+				a(href="https://www.dropbox.com/s/j6y7je52kikc5rq/DebigareResume.pdf?dl=0") Resume (Print)
+			li.footer__link.link__knockout
+				i(class="fab fa-github-square")
+				a(href="https://www.github.com/adebigare") Github
+			li.footer__link.link__knockout
+				i(class="fab fa-linkedin")
+				a(href="https://www.linkedin/in/adebigare") LinkedIn
+

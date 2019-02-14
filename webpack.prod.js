@@ -36,14 +36,17 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
+                use: {
+                    loader: 'babel-loader'
+                }
             },
             {
                 test: /\.pug$/,
                 use: [{
                     loader: 'pug-loader',
                     options: {
-                        pretty: true,
+                        pretty: false,
+                        plugins: require('jstransformer')(require('jstransformer-markdown-it'),require('markdown-it-container'))
                     }
                 }]
             },
@@ -73,7 +76,8 @@ module.exports = {
                                 sourceMap: true,
                                 sourceMapContents: true,
                                 includePaths: [
-                                    require('bourbon-neat').includePaths
+                                    require('bourbon-neat').includePaths,
+                                    require('@fortawesome/fontawesome-free').includePaths
                                 ]
                             }
                         }
@@ -93,25 +97,32 @@ module.exports = {
                 },
             },
             {
-                // Load all images as base64 encoding if they are smaller than 8192 bytes
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            name: '[name].[hash:20].[ext]',
-                            limit: 8192
-                        }
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[path][name].[ext]',
                     }
-                ]
-            }
+                }],
+            },
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/html/patterns.pug',
-            // Inject the js bundle at the end of the body of the given template
-            inject: 'body',
+            filename: 'index.html',
+            title: 'Adrienne Debigare Portfolio',
+            template: 'src/html/layout.pug',
+            inject: true,
+            file: require('./src/assets/data/index.json'),
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'patterns.html',
+            title: 'Adrienne Debigare Portfolio',
+            template: 'src/html/patterns.pug',
+            inject: true,
+            data: {
+              global: require('./src/assets/data/global.json')
+            }
         }),
         new CleanWebpackPlugin(buildPath),
         new FaviconsWebpackPlugin({
@@ -127,7 +138,7 @@ module.exports = {
             // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
             background: '#fff',
             // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-            title: 'pug-webpack-test',
+            title: 'adrienne-debigare',
 
             // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
             icons: {

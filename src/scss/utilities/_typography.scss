@@ -3,13 +3,14 @@
 // 	font-family: 'Tofino Text';
 // 	src: url('./../fonts/TofinoWebOptimized/TofinoProPersonalText-Regular.woff');
 // }
+// $fa-font-path: "~/font-awesome/fonts";
+// @import "font-awesome/scss/font-awesome";
 
 $google-fonts-url:				('https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,900');
 
 // set base for font size and line height
 // $baseline used for vertical baseline grid
-$base-font-size:				16px;
-$baseline:						.8125rem; //13px, actual golden ratio is 26
+$base-font-size:				18px;
 
 // default type stacks
 $font-family-sans-fallback:		'Arial', sans-serif;
@@ -24,28 +25,33 @@ $font-family-display: 			$font-family-sans;
 $font-family-default: 			$font-family-sans;
 
 // Font Sizes
-
+//TO DO: h1 mobile, tablet, desktop refactor
 $font-size: (
 	'desktop-up': (
 		'h1' : 6.854rem,
 		'h2' : 4.236rem,
 		'h3' : 2.618rem,
+		'h4' : 2.618rem,
+		'h5' : 1.618rem,
+		'h6' : 1rem,
+		'p' : 1rem
+	),
+	'tablet-up': (
+		'h1' : 4.236rem,
+		'h2' : 2.618rem
+	),
+	'mobile-up': (
+		'h1' : 2.618rem,
+		'h2' : 2.618rem,
+		'h3' : 1.618rem,
 		'h4' : 1.618rem,
 		'h5' : 1rem,
 		'h6' : 0.618rem,
 		'p' : 1rem
 	),
-	'mobile-up': (
-		'h1' : 4.236rem,
-		'h2' : 2.618rem,
-		'h3' : 1.618rem,
-		'h4' : 1rem,
-		'h5' : 0.618rem,
-		'h6' : 0.618rem,
-		'p' : 1rem
-	),
 
 );
+//	'h1' : 4.236rem,
 
 // Font Weights
 $font-weight-thin:				200;

@@ -1,48 +1,50 @@
-doctype html
-html
-	head
-		title= htmlWebpackPlugin.options.title
-		// to do – add the rest of the HEAD attributes
-	body.default-neat-grid
-		div.atoms
+include partials/header
+
+body.default-neat-grid
+	div.atoms
+		div.scaffolding
+			h3.box-12.scaffolding-title Fonts
+			include styleguide/fonts.pug
+			|
+			|
+		div.scaffolding
+			h3.box-12.scaffolding-title  Buttons
+			include ./mixins/button.pug
+			div.grid-container
+				div.box-9
+					+button('/foo', 'button')(class="btn")
+			|
+			|
+		div.scaffolding
+			h3.box-12.scaffolding-title  Brand Colors
+			include styleguide/brandcolors.pug
+			|
+			|
+		div.scaffolding
+			h3.box-12.scaffolding-title Images
+			include styleguide/images.pug
+			|
+			|
+	div.molecules
+		div.scaffolding
+			h3.box-12.scaffolding-title Primary Navigation
+			include partials/primary-nav.pug
+			|
+			|
 			div.scaffolding
-				h3.box-12.scaffolding-title Fonts
-				include styleguide/fonts.pug
+				h3.box-12.scaffolding-title Hero
+				include partials/hero.pug
+				// - var global = require('./../assets/data/global.json')
+				// - var globalVars = global
+				// div.box-9
+				// #{hero-title}=globalVars.heroTitle
+			|
+			|
+			div.scaffolding
+				h3.box-12.scaffolding-title Tout
+				include partials/media-tout.pug
 				|
 				|
 			div.scaffolding
-				h3.box-12.scaffolding-title  Buttons
-				include ./mixins/button.pug
-				div.grid-container
-					div.box-9
-						+button('/foo', 'button')(class="btn")
-				|
-				|
-			div.scaffolding
-				h3.box-12.scaffolding-title  Brand Colors
-				include styleguide/brandcolors.pug
-				|
-				|
-			div.scaffolding
-				h3.box-12.scaffolding-title Images
-				include styleguide/images.pug
-				|
-				|
-		div.molecules
-			div.scaffolding
-				h3.box-12.scaffolding-title Primary Navigation
-				include partials/primary-nav.pug
-				|
-				|
-				div.scaffolding
-					h3.box-12.scaffolding-title Hero
-					include partials/hero.pug
-					// - var global = require('./../assets/data/global.json')
-					// - var globalVars = global
-					// div.box-9
-					// #{hero-title}=globalVars.heroTitle
-				|
-				|
-				div.scaffolding
-					h3.box-12.scaffolding-title Tout
-					include partials/media-tout.pug
+				h3.box-12.scaffolding-title Footer
+				include partials/footer.pug

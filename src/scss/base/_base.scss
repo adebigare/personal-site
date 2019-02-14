@@ -29,10 +29,17 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+main, article, section {
+  margin: auto;
+}
+
+main {
+  @include grid-container;
+}
+
 p {
   margin-bottom: $baseline * 2;
-  max-width: 100%;
-  width: 36em;
+  max-width: 36em;
 }
 
 a {
@@ -43,12 +50,19 @@ a {
   transition: .4s;
 }
 
-.link {
-  @include hover {
-    background-color: get-color('secondary', 'light');
-    color: get-color('primary', 'dark');
-  }
+ul,
+li {
+
+  list-style-type: none;
+
 }
+
+// .link {
+//   @include hover {
+//     background-color: get-color('secondary', 'light');
+//     color: get-color('primary', 'dark');
+//   }
+// }
 
 .underline {
   background-image: linear-gradient(get-color('secondary'), get-color('secondary', 'light'));
@@ -58,69 +72,96 @@ a {
 
   @include hover {
     background-image: none;
+    background-color: get-color('secondary', 'light');
+    color: get-color('primary', 'dark');
   }
 }
 
- h1 {
-  font-size: map-get-deep($font-size, 'mobile-up', 'h1');
+.link__knockout {
+  transition: .2s font-style;
+  @include hover {
+    background: none;
+    outline: 2px solid get-color('accent', 'light');
+    color: $white;
+    font-style: italic;
+
+  }
+}
+
+h1, .h1 {
+  font-size: map-deep-get($font-size, 'mobile-up', 'h1');
+  line-height: $baseline*5;
   font-style: italic;
   font-weight: $font-weight-thin;
-  line-height: $baseline * 6;
+
+  @include for-tablet-landscape-up {
+    font-size: map-get-deep($font-size, 'tablet-up', 'h1');
+    line-height: $baseline * 7;
+  }
 
   @include for-desktop-up {
     font-size: map-get-deep($font-size, 'desktop-up', 'h1');
-    line-height: $baseline * 8;
+    line-height: $baseline * 10;
   }
 }
 
-h2 {
+h2, .h2 {
   font-size: map-get-deep($font-size, 'mobile-up', 'h2');
   font-weight: $font-weight-ultra;
-  line-height: $baseline;
+  line-height: $baseline * 3;
+  letter-spacing: .75px;
 
-  @include for-desktop-only {
+  @include for-tablet-portrait-up {
+    font-size: map-get-deep($font-size, 'tablet-up', 'h2');
+    line-height: $baseline * 4;
+  }
+
+  @include for-desktop-up {
     font-size: map-get-deep($font-size, 'desktop-up', 'h2');
-    line-height: $baseline * 3;
+    line-height: $baseline * 6;
 
   }
 }
 
-h3 {
+h3, .h3 {
   font-size: map-get-deep($font-size, 'mobile-up', 'h3');
   font-weight: $font-weight-default;
+  line-height: $baseline * 3;
 
-  @include for-desktop-only {
+  @include for-desktop-up {
     font-size: map-get-deep($font-size, 'desktop-up', 'h3');
+    line-height: $baseline * 6;
   }
 }
 
-h4 {
+h4, .h4 {
   font-size: map-get-deep($font-size, 'mobile-up', 'h4');
   font-weight: $font-weight-thin;
   font-style: italic;
+  line-height: $baseline * 3;
 
-  @include for-desktop-only {
+  @include for-desktop-up {
     font-size: map-get-deep($font-size, 'desktop-up', 'h4');
+    line-height: $baseline * 4;
   }
 }
 
-h5 {
+h5, .h5 {
   font-size: map-get-deep($font-size, 'mobile-up', 'h5');
   font-weight: $font-weight-default;
-  line-height: $baseline;
 
-  @include for-desktop-only {
+  @include for-desktop-up {
     font-size: map-get-deep($font-size, 'desktop-up', 'h5');
+    // line-height: $baseline * 2;
   }
 }
 
-h6 {
+h6, .h6 {
   font-size: map-get-deep($font-size, 'mobile-up', 'h6');
   font-weight: $font-weight-default;
   text-transform: uppercase;
-  line-height: $baseline;
 
-  @include for-desktop-only {
+  @include for-desktop-up {
     font-size: map-get-deep($font-size, 'desktop-up', 'h6');
   }
 }
@@ -128,6 +169,26 @@ h6 {
 hr {
   color: get-color('primary', 'light');
   margin: $baseline 0;
-  @include grid-column(12);
+  width: 100%;
+}
+
+.hr_vertical {
+  position: absolute;
+  transform: rotate(90deg);
+  z-index: 0;
+
+  // top: 20%;
+  right: 47%;
+
+}
+
+blockquote {
+  text-align: center;
+  background: get-color('secondary', 'light');
+  max-width: 36em;
+  margin: auto;
+  padding: $baseline/2;
+  font-weight: $font-weight-default;
+  font-style: italic;
 }
 

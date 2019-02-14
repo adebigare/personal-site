@@ -50,6 +50,9 @@
 // Media Queries
 //
 // Based on https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+@mixin for-tiny-phone-only {
+  @media (max-width: 500 px) { @content; }
+}
 
 @mixin for-phone-only {
   @media (max-width: 599px) { @content; }
@@ -57,7 +60,7 @@
 @mixin for-tablet-portrait-up {
   @media (min-width: 600px) { @content; }
 }
-@mixin for-tablet-portait-only {
+@mixin for-tablet-portrait-only {
   @media (min-width: 600px) and (max-width: 899px) { @content; }
 }
 @mixin for-tablet-landscape-up {
@@ -164,3 +167,16 @@
   transition: $transition-property $transition-time $method;
 }
 
+
+//
+// Branded element – background dots
+//
+@mixin background-dots-pattern() {
+  position: absolute;
+  width: 100%;
+  content: "";
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSJ3aGl0ZSIgLz4KICA8Y2lyY2xlIGN4PSIxIiBjeT0iMSIgcj0iMSIgZmlsbD0iIzU1OTRlNyIvPgo8L3N2Zz4=");
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  transform: skew(-10deg);
+}

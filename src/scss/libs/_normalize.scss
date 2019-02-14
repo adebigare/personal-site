@@ -32,6 +32,7 @@ $h3_margin: 1em 0 !default;
 $h4_margin: 1.33em 0 !default;
 $h5_margin: 1.67em 0 !default;
 $h6_margin: 2.33em 0 !default;
+$p_margin: 0 !default;
 
 $background: #fff !default;
 $color: #000 !default;
@@ -74,6 +75,14 @@ video {
 audio:not([controls]) {
   display: none; // 1
   height: 0; // 2
+}
+
+ul {
+  margin-block-start: 0;
+  padding-inline-start: 0;
+  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
 }
 
 //
@@ -511,4 +520,12 @@ input {
       *width: 13px; // 3
     }
   }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+p {
+  margin: $p_margin;
 }

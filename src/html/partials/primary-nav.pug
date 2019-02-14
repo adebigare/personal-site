@@ -1,9 +1,11 @@
 nav.primary-nav
-	ul.primary-nav__links
-		li.primary-nav__logo
-			a(href='#')
-				img(src=require('./../../assets/images/SVG/lockup-horiz.svg'))
-		li.primary-nav__item
+	a.primary-nav__logo(href='#')
+		img(src=require('./../../assets/images/svg/lockup-horiz-accent-light.svg'))
+	ul.primary-nav__links.nav
+		//- li.primary-nav__logo
+		//- 	a(href='#')
+		//- 		img(src=require('./../../assets/images/SVG/lockup-horiz-accent-light.svg'))
+		li.primary-nav__item.link1
 			a(class='link underline' href='#') projects
-		li.primary-nav__item
+		li.primary-nav__item.link2
 			a(class='link underline' href='#') prototypes

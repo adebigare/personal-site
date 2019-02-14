@@ -1,4 +1,10 @@
 // Variables
+$baseline:						.8125rem; //13px, actual golden ratio is 26
+
+$neat-grid: (
+	columns: 12,
+	gutter: $baseline
+);
 
 // Configurations
 $transition: 0.3s linear;

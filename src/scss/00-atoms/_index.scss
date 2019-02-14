@@ -37,7 +37,7 @@
 		@include grid-column(8);
 	}
 
-	@include for-desktop-only {
+	@include for-desktop-up {
 		@include grid-column(6);
 	}
 }
@@ -65,9 +65,18 @@
 }
 
 .img-square__small {
-	@include for-desktop-only {
+	@include for-desktop-up {
 		@include grid-column(2);
 	}
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .grid-container {

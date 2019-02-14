@@ -19,7 +19,8 @@ module.exports = {
             filename: 'index.html',
             title: 'Adrienne Debigare Portfolio',
             template: 'src/html/layout.pug',
-            inject: true
+            inject: true,
+            file: require('./src/assets/data/index.json'),
         }),
         new HtmlWebpackPlugin({
             filename: 'patterns.html',
@@ -45,10 +46,7 @@ module.exports = {
               test: /\.jsx$/,
               exclude: /node_modules/,
               use: {
-                  loader: 'babel-loader',
-                  options: {
-                      presets: ['es2015']
-                    }
+                  loader: 'babel-loader'
                 }
             },
             {
@@ -57,6 +55,7 @@ module.exports = {
                     loader: 'pug-loader',
                     options: {
                         pretty: true,
+                        plugins: require('jstransformer')(require('jstransformer-markdown-it'),require('markdown-it-container'))
                     }
                 }]
             },
@@ -85,7 +84,8 @@ module.exports = {
                            sourceMap: true,
                            sourceMapContents: true,
                            includePaths: [
-                               require('bourbon-neat').includePaths
+                               require('bourbon-neat').includePaths,
+                               require('@fortawesome/fontawesome-free').includePaths
                            ]
                        }
                    }

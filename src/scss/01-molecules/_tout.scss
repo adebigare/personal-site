@@ -1,10 +1,10 @@
 .tout {
-	display: inline-flex;
+	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-content: space-around;
-	// flex-wrap: wrap;
 	width: 100%;
+	margin-top: $baseline*8;
 
 	@include for-tablet-landscape-up {
 		flex-direction: row;
@@ -61,9 +61,9 @@
 
 	@include for-tablet-landscape-up {
 		@include grid-column(11);
-		top: $baseline*9;
-		left: $baseline;
-		margin: $baseline;
+		top: $baseline*7;
+		left: 0;
+		// margin: $baseline;
 
 	}
 	@include for-desktop-up {
@@ -85,14 +85,13 @@
 }
 
 .tout__img {
-	filter: blur(3px);
 	margin: 0;
 	object-fit: cover;
 	transition: filter $transition;
 	width: 100%;
 
 	@include hover {
-		filter: none;
+		filter: blur(3px);
 	}
 
 }

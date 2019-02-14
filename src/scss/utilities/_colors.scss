@@ -12,6 +12,7 @@ $barrier-reef:              hsl(191, 100%, 32%); //blue-green
 $deep-lake:                 hsl(183, 100%, 21%); //green-blue
 $ibiza-blue:                hsl(199, 100%, 36%); //cerulean
 $pink-lemonade:             hsl(347, 79%, 68%);
+$viv-white:                     #efe1e7;
 $white:                     white;
 
 
@@ -52,14 +53,7 @@ $color-note:                #666;
 
 // Common colors
 $color-background:          white;
-// $color-background-shade:    $iron;
-// $color-background-invert:   $nebula;
 $color-text:                get-color('primary', 'dark');
-// $color-text-weak:           $regent-grey;
-// $color-text-strong:         $midnight-blue;
-// $color-text-heading:        $regent-grey;
-// $color-text-invert:         rgba($color-background, .75);
-// $color-text-strong-invert:  $color-background;
 
 // Links
 $color-link:                $color-primary;
@@ -81,3 +75,16 @@ $color-success:             #2cde2c;
 $color-warning:             #cf8600;
 $color-important:           #d00;
 $color-notice:              #66b;
+
+// Gradients
+$gradient-ibiza-sulphur: linear-gradient(to bottom right, get-color('secondary'), get-color('secondary-accent'));
+
+$gradient-vivacious-coral: linear-gradient(to bottom right, get-color('primary'), get-color('accent'));
+
+$gradient-coral-vivacious: linear-gradient(to bottom right, get-color('accent'), get-color('primary'));
+
+$gradient-sulphur-coral: linear-gradient(to bottom right, get-color('secondary'), get-color('accent'));
+
+$gradient-vivacious-ibiza: linear-gradient(to bottom right, get-color('primary'), get-color('secondary-accent'));
+
+$gradient-vivacious-sulphur: linear-gradient(to bottom right, get-color('primary', 'light'), get-color('secondary'));

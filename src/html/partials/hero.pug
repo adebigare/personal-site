@@ -1,6 +1,14 @@
-- var global = require('./../../assets/data/global.json')
-- var headlineClasses = ['hero__headline', 'hero_headline_primary']
-a.hero(href= `${global.link}`)
-	img(class='hero__img' src=require("./../../assets/images/fpo_hero.png"))
-	h1(class=headlineClasses) #{global.heroTitle}
+- var global = require('./../../assets/data/index.json')
+- var headlinePrimaryClasses = ['hero__headline', 'hero_headline_primary']
+- var headlineSecondaryClasses = ['hero__headline', 'hero_headline_primary']
+- var headlineAccentClasses = ['hero__headline', 'hero_headline_primary']
+- var headlineSecondaryAccentClasses = ['hero__headline', 'hero_headline_primary']
+
+// .hero.hero_background
+// 	a.hero__link(href= `${global.link}`)
+// 		img(class='hero__img' src=require("./../../assets/images/Day-OfEvent.png"))
+// 		h1(class=headlineClasses) #{global.heroTitle}
+// 	.hero__intro.hero_intro_secondary_accent
+// 		h3.hero__intro-text #{global.heroIntro}
+// 	// hr.hr_vertical << Maybe later
 

@@ -14,7 +14,7 @@ figure {
 figcaption {
 	font-size: map-get-deep($font-size, 'mobile-up', 'h4');
 
-	@include for-desktop-only {
+	@include for-desktop-up {
 		font-size: map-get-deep($font-size, 'desktop-up', 'h4')
 	}
 }

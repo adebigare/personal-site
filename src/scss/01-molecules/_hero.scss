@@ -1,71 +1,234 @@
 /*------------------------------------*\
 	#HERO BLOCK
 \*------------------------------------*/
+
+//
+// Main Div
+//
 .hero { // external geometry and positioning
     display: block;
     position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
-/**
- * Hero Image
- * 1) This is the primary hero image that runs full-bleed across the layout
- */
+//
+// Hero Image
+//
 .hero__img {
-    width: 100%;
-    max-height: 75vh;
-    object-fit: cover;
+    // width: 100%;
+    max-height: 100vh;
+    object-fit: none;
+    opacity: .5;
+    overflow: hidden;
+    mix-blend-mode: luminosity;
+    z-index: 0;
 
 }
 
 /**
  * Hero Headline
- * 1) This sits overtop of the hero image when space permits
- */
+**/
 .hero__headline {
-    position: absolute;
+    position: relative;
     padding: $baseline;
-    transition: .3s;
-    bottom: $baseline * 4;
-    left: $baseline * 2;
+    padding-right: $baseline * 3;
+    // -webkit-clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
+    // clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
+    text-align: right;
+    z-index: 1;
+    max-width: 90%;
+
+    @include hover {
+        &::before {
+            animation: swipe 1.5s ease-in-out both;
+            opacity: .3;
+            mix-blend-mode: multiply;
+        }
+        &::after {
+            animation: swipe 1.5s ease-in-out .4s both;
+            opacity: .3;
+            mix-blend-mode: multiply;
+        }
+    }
+
+    @include for-tablet-portrait-up {
+    }
 
     @include for-tablet-landscape-up {
-        max-width: 50%;
+        // -webkit-clip-path: ppolygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+        // clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+        max-width: 90%;
+    }
+
+    &::before, &::after {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        color: $white;
+
+    }
+
+    &::before {
+    }
+
+    &::after {
+        // left: 49%;
     }
  }
 
-.hero_headline_primary {
-    background: get-color('primary');
-    color: $white;
+ //
+ //Second block on HP with taglines
+ //
+ .hero__intro {
+     position: relative;
+     padding: $baseline $baseline * 2;
+     width: 60%;
+     text-align: right;
 
-    @include hover {
-        background: get-color('primary', 'dark');
+     @include for-tablet-landscape-up {
+        width: 70%;
+     }
+
+     &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9JyM1NTk0ZTcnIHN0cm9rZS13aWR0aD0nMScvPgo8L3N2Zz4K");
+        background-repeat: repeat;
+        width: 100%;
+        height: 1vh;
+     }
+ }
+
+ //
+ // Container for HP text positions
+ //
+ .hero__text-container {
+     position: absolute;
+     top: 15%;
+     width: 100%;
+     height: 35%;
+
+     @include for-tablet-portrait-up {
+        width: 90%;
+        height: 45%;
+     }
+
+     @include for-tablet-landscape-up {
+        width: 80%;
+     }
+    &::before {
+        @include background-dots-pattern;
+        height: 55vh;
+        top:-6vh;
+        right: 5vw;
+
+       @include for-tablet-portrait-up {
+           right: -2vw;
+           height: 60vh;
+       }
+
+       @include for-tablet-landscape-up {
+           right: -3vw;
+           height: 70vh;
+       }
     }
+     // &::before {
+     //    position: absolute;
+     //    width: 70%;
+     //
+
+     //    content: "";
+     //    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSJ3aGl0ZSIgLz4KICA8Y2lyY2xlIGN4PSIxIiBjeT0iMSIgcj0iMSIgZmlsbD0iIzU1OTRlNyIvPgo8L3N2Zz4=");
+     //    background-repeat: repeat;
+     //    mix-blend-mode: multiply;
+     //    transform: skew(-5deg);
+
+
+
+     //    @include for-desktop-up {
+     //        width: 70%;
+     //    }
+
+     // }
+ }
+
+//
+// HP Background Gradients
+//
+
+ .hero_background_ibsul {
+     background: $gradient-ibiza-sulphur;
+ }
+
+ .hero_background_vivcor {
+     background: $gradient-vivacious-coral;
+ }
+
+ .hero_background_sulcor {
+     background: $gradient-sulphur-coral;
+ }
+
+ .hero_background_vivib {
+     background: $gradient-vivacious-ibiza;
+ }
+
+.hero_background_vivsul {
+     background: $gradient-vivacious-sulphur;
+ }
+
+
+//
+// headline stylings
+//
+.hero_headline_primary {
+    background: $white;
+    mix-blend-mode: luminosity;
 }
 
 .hero_headline_secondary {
-    background: get-color('secondary', 'light');
+    background: get-color('secondary');
     color: $white;
-
-    @include hover {
-        background: get-color('secondary', 'dark');
-    }
 }
 
 .hero_headline_accent {
-    background: get-color('accent', 'light');
-    color: $white;
-
-    @include hover {
-        background: get-color('accent', 'dark');
-    }
+    background: get-color('accent');
 }
 
 .hero_headline_secondary_accent {
-	background: get-color('secondary-accent', 'light');
+	background: get-color('secondary-accent');
 	color: $white;
-
-    @include hover {
-        background: get-color('secondary', 'dark');
-    }
 }
 
+//
+// tagline styles
+//
+.hero_intro_primary {
+    background: white;
+    mix-blend-mode: luminosity;
+}
+
+.hero_intro_secondary {
+    background: white;
+    color: get-color('secondary');
+    mix-blend-mode: luminosity;
+}
+
+.hero_intro_accent {
+    background: white;
+    color: get-color('accent');
+    mix-blend-mode: luminosity;
+}
+
+.hero_intro_secondary_accent {
+    background: white;
+    color: get-color('secondary-accent');
+    mix-blend-mode: luminosity;
+}
