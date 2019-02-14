@@ -1,0 +1,34 @@
+- var data = require('./../../assets/data/project.json');
+- var headlineClasses = ['project-hero__headline', 'project-hero_headline_secondary']
+//include partials/hero
+// Later when bug fixed, add hero as block/extend
+article.project-hero.project-hero-background_exp
+	img(class='project-hero__img' src=require("./../../assets/images/Day-OfEvent.png"))
+	h2(class=headlineClasses) #{data.projectTitle}
+
+article.content
+	aside.highlights
+		.titleA
+			h3.highlights__title Technologies
+		.highlights__list.dataA
+			ul
+				each item in ["HTML/CSS", "UX Research", "UX Design"]
+					li.highlights__skill.h4=item
+		.titleB
+			h3.highlights__title Main Skills
+		.highlights__list.dataB
+			// TO DO: Data integration. Why is the "each" printing each letter?
+			//ul
+			// 	each item in `${data.projectSkills}`
+			// 		li=item
+			ul
+				each item in ["Skill1","Skill2","Skill3"]
+					li.highlights__skill.h4=item
+	section.project-writeup
+		p.project-paragraph #{data.projectParagraph1}
+		p.project-paragraph #{data.projectParagraph2}
+		img.img-hero.full-width(src=require("./../../assets/images/fpo_16x9.png"))
+
+
+
+

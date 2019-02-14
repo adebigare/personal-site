@@ -1,0 +1,85 @@
+/*------------------------------------*\
+	#HERO BLOCK
+\*------------------------------------*/
+.project-hero { // external geometry and positioning
+    display: block;
+    position: relative;
+    line-height: 0;
+    min-height: $baseline * 22;
+}
+
+.project-hero-background_primary {
+    background-color: get-color('primary', 'light');
+}
+
+.project-hero-background_secondary {
+    background-color: get-color('secondary', 'light');
+}
+
+.project-hero-background_accent {
+    background-color: get-color('accent', 'light');
+}
+
+.project-hero-background_secondary_accent {
+    background-color: get-color('secondary-accent', 'light');
+}
+
+.project-hero-background_exp {
+    background: $gradient-ibiza-sulphur;
+}
+
+
+/**
+ * Hero Image
+ * 1) This is the primary hero image that runs full-bleed across the layout
+ */
+.project-hero__img {
+    // width: 100%;
+    min-height: $baseline * 22;
+    max-height: 75vh;
+    object-fit: none;
+    // filter: blur(2px);
+    // opacity: .5;
+    mix-blend-mode: overlay;
+
+}
+
+/**
+ * Hero Headline
+ * 1) This sits overtop of the hero image when space permits
+ */
+.project-hero__headline {
+    position: absolute;
+    padding: $baseline 4%;
+    transition: .3s;
+    bottom: 10%;
+    left: -1%;
+
+    @include for-tablet-portrait-up {
+        // bottom: $baseline * 4;
+        // left: $baseline * 2;
+        max-width: 80%;
+    }
+
+    @include for-tablet-landscape-up {
+    }
+ }
+
+.project-hero_headline_primary {
+    background: get-color('primary');
+    color: $white;
+
+}
+
+.project-hero_headline_secondary {
+    background: get-color('secondary');
+    border-top: 5px solid get-color('secondary', 'dark', .3);
+    border-bottom: 5px solid get-color('secondary', 'dark', .3);
+    color: $white;
+}
+
+.project-hero_headline_accent {
+    background: get-color('accent');
+    color: $white;
+}
+

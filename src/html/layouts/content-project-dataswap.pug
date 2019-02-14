@@ -1,0 +1,33 @@
+- var headlineClasses = ['project-hero__headline', 'project-hero_headline_secondary']
+//include partials/hero
+// Later when bug fixed, add hero as block/extend
+article.project-hero.project-hero-background_exp
+	img(class='project-hero__img' src=require("./../../assets/images/Day-OfEvent.png"))
+	h2(class=headlineClasses) The Data Swap
+
+article.content
+	aside.highlights
+		.titleA
+			h3.highlights__title Technologies
+		.highlights__list.dataA
+			ul
+				each item in ["HTML/CSS"]
+					li.highlights__skill.p=item
+		.titleB
+			h3.highlights__title Main Skills
+		.highlights__list.dataB
+			// TO DO: Data integration. Why is the "each" printing each letter?
+			//ul
+			// 	each item in `${data.projectSkills}`
+			// 		li=item
+			ul
+				each item in ["Branding/Identity Design", "Service Design Research", "Event Management"]
+					li.highlights__skill.p=item
+	section.project-writeup
+		.project-md
+			include:markdown-it(markdown-it-container linkify html typographer) ./../../assets/data/data-swap.md
+
+
+
+
+

@@ -1,0 +1,33 @@
+{
+	"introExplain" : "I'm a designer and product strategist that lives for the hard problems. Using human-centered design, data analysis, and good ol' fashioned work ethic I make molehills out of mountains.",
+	"openKnowledge" :
+		{
+			"heroTitle" : "Open Knowledge",
+			"link" : "#",
+			"heroIntro" : "An HBS Ideas Community"
+		}
+	,
+	"dataSwap" :
+		{
+			"heroTitle" : "Data Swap",
+			"link" : "#",
+			"heroIntro" : "Reinventing Hackathons"
+		}
+	,
+	"globeLab" :
+		{
+			"heroTitle" : "GlobeLab",
+			"link" : "#",
+			"heroIntro" : "Journalism Innovation Lab"
+		}
+	,
+	"digitalInitiative" :
+		{
+			"heroTitle" : "HBS Digital Initiative",
+			"link" : "#",
+			"heroIntro" : "Studying and Shaping the Digital Economy"
+		}
+	,
+	"toutTitle": "See This Thing",
+	"toutTease": "Lorem ipsum dolor amet scenester man bun listicle semiotics vaporware umami prism ennui plaid hammock. "
+}

@@ -1,0 +1,10 @@
+{
+	"projectTitle" : "I'm the title of the project",
+	"projectDescription" : "Lorem ipsum dolor amet scenester man bun listicle semiotics vaporware umami prism ennui plaid hammock.",
+	"projectClient": "Client Name",
+	"projectTechnologies": ["Tech1", "Tech2", "Tech3"],
+	"projectSkills": ["Skill1","Skill2","Skill3"],
+	"projectParagraph1" : "Ex culpa aliquip laborum hot chicken, pop-up truffaut craft beer humblebrag irony edison bulb gentrify. Craft beer excepteur sint leggings aesthetic non. 3 wolf moon helvetica squid poutine leggings vice iPhone deep v swag kitsch pop-up taiyaki hell of hammock. Venmo cray vinyl vegan. Crucifix cred godard elit, ipsum eiusmod aliqua ullamco chartreuse. Authentic thundercats ea selfies polaroid taiyaki tbh butcher williamsburg.",
+	"projectParagraph2" : "Subway tile sriracha pitchfork, af poke DIY bespoke squid man braid. Pitchfork plaid exercitation locavore cupidatat forage blog flexitarian single-origin coffee kogi qui enim veniam. Aesthetic swag beard, iPhone glossier adaptogen gochujang jianbing food truck taxidermy ut. Reprehenderit gluten-free kickstarter neutra.",
+	"projectImage1": "./../../assets/images/fpo_16x9.png"
+}

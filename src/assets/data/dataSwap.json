@@ -1,0 +1,16 @@
+{
+	"The Problem" :
+		{
+			"para-1": "In 2013, hackathon fever had begun to reach a zenith within tech circles. What started as a fun way for technologists to spend a weekend quickly became a way for companies to extract hundreds of hours of mostly free labor from young designers and software engineers.",
+			"para-2":"Meanwhile our team at Globelab–The Boston Globe’s grant funded R&D lab– was coming to the end of its year of funding. Given the landscape of journalism, and the imminent sale of the business, it was unlikely the lab would continue on another year. So it was time to start thinking about how we might synthesize the relationships we’d built over the last 6 months or so.",
+		},
+	"Limitations" :
+		{
+			"para-1" : "Funding was our main challenge. Our institutions paid our salaries, and space was abundant between our various affiliations. But otherwise we were mostly on our own. This lead to an interesting learning experience in incentivization when it came time to think of prizes and winners.",
+			"para-2" : "Time became another interesting challenge. The academic calendar runs very differently from the business calendar. So while trying to plan and launch the event we had to contend with finals, spring break, new semesters, etc."
+		},
+	"Solutions" :
+		{
+			"para-1" : "Globelab partnered with labs from Northeastern University, MIT and a local research non-profit to help with recruiting and organizing. After some research and brainstorming we found that a main pain point of traditional hackathons was its compressed time frame, and lack of useable output. "
+		}
+}

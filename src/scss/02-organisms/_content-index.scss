@@ -1,0 +1,139 @@
+.hp-header {
+	height: 100vh;
+	position: relative;
+}
+
+.hp-intro {
+	@include grid-column(9);
+	@include grid-push(3);
+	position: relative;
+    z-index: -10;
+	top: 8vh;
+	// left: 7vh;
+
+	@include for-tablet-portrait-up {
+		@include grid-column(7);
+		@include grid-push(4);
+	}
+
+	@include for-tablet-landscape-up {
+		left: -2vw;
+	}
+
+	@include for-desktop-up {
+		top: 15vh;
+	}
+
+	@include for-big-desktop-up {
+		top: 9vh;
+		left: 0vw;
+	}
+
+	&::before {
+		top: -5vh;
+		left: -10vw;
+		z-index: -10;
+		@include background-dots-pattern;
+		height: 35vh;
+
+		@include for-tablet-landscape-up {
+			height: 40vh;
+		}
+	}
+
+}
+
+.hp__headshot {
+	position: relative;
+	z-index: -1;
+	top: 15vh;
+	left: -5vh;
+	-webkit-clip-path:  polygon(50% 0%, 100% 50%, 50% 100%, -6% 50%);
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, -6% 50%);
+	max-width: 50vw;
+	object-fit: contain;
+	transition: .3s -webkit-clip-path;
+
+	@include for-tablet-portrait-up {
+		max-width: 30vw;
+		top: 17vh;
+		left: 10vw;
+
+		-webkit-clip-path:  polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+		clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+	}
+
+	@include for-tablet-landscape-up {
+		max-width: 25vw;
+	}
+
+	@include for-desktop-up {
+		max-width: 20vw;
+		top: 23vh;
+		left: 20vh;
+	}
+
+	@include for-big-desktop-up {
+		// max-width: 20vw;
+		// top: 23vh;
+		left: 25vh;
+	}
+
+}
+
+.hp__name {
+	color: get-color('secondary-accent');
+	background: $gradient-coral-vivacious;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	position: relative;
+	width: 110%;
+	z-index: 1;
+	padding-bottom: $baseline;
+
+	@include for-tablet-landscape-up {
+		font-size: map-deep-get($font-size, 'desktop-up', 'h2');
+		line-height: $baseline * 6;
+	}
+
+}
+
+.hp__hello {
+	position: relative;
+	z-index: 10;
+	background-color: $white;
+}
+
+.hp-intro__explain {
+	position: relative;
+
+	background-color: $white;
+}
+
+.hp__email {
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+	padding-top: $baseline;
+	width: 100vw;
+	color: $white;
+	z-index: 1;
+
+	@include for-desktop-up {
+		padding-bottom: $baseline;
+	}
+
+	&::before {
+		content: "";
+		width: 100vw;
+		height: 100%;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		background: $gradient-vivacious-coral;
+	}
+}
+
+// hp__email--quip
