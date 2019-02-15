@@ -8,11 +8,13 @@ $sulphur-spring:            hsl(61, 81%, 47%); //yellow-green
 $living-coral:              hsl(5, 100%, 69%);
 $chive-blossom:             hsl(272, 24%, 48%); //lavendar-ish
 $vivacious:                 hsl(337, 61%, 40%); //red-purple
+
+//unused
 $barrier-reef:              hsl(191, 100%, 32%); //blue-green
 $deep-lake:                 hsl(183, 100%, 21%); //green-blue
 $ibiza-blue:                hsl(199, 100%, 36%); //cerulean
 $pink-lemonade:             hsl(347, 79%, 68%);
-$viv-white:                     #efe1e7;
+$viv-white:                     #d6d1d3;
 $white:                     white;
 
 
@@ -40,6 +42,11 @@ $brand-colors: (
     'base': $ibiza-blue,
     'light': tint($ibiza-blue),
     'dark': shade($ibiza-blue)
+  ),
+  'neutral': (
+    'base': $viv-white,
+    'light': tint($viv-white),
+    'dark': shade($viv-white)
   )
 );
 

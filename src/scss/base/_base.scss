@@ -37,6 +37,14 @@ main {
   @include grid-container;
 }
 
+article {
+  margin-bottom: $baseline * 2;
+
+  @include for-tablet-landscape-up {
+    margin-bottom: $baseline * 4;
+  }
+}
+
 p {
   margin-bottom: $baseline * 2;
   max-width: 36em;
@@ -152,7 +160,7 @@ h5, .h5 {
 
   @include for-desktop-up {
     font-size: map-get-deep($font-size, 'desktop-up', 'h5');
-    // line-height: $baseline * 2;
+    line-height: $baseline * 3;
   }
 }
 
@@ -192,3 +200,18 @@ blockquote {
   font-style: italic;
 }
 
+figure {
+  display: flex;
+  flex-flow: column;
+}
+
+figcaption {
+  text-align: right;
+  background: get-color('neutral');
+  padding-right: $baseline;
+
+  @include for-tablet-landscape-up {
+    @include grid-column(6);
+    @include grid-push(6);
+  }
+}

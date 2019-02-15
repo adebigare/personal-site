@@ -31,6 +31,12 @@ module.exports = {
               global: require('./src/assets/data/global.json')
             }
         }),
+        new HtmlWebpackPlugin({
+            filename: 'dataswap.html',
+            title: 'Adrienne Debigare Portfolio – Dataswap',
+            template: 'src/html/layouts/content-project-dataswap.pug',
+            inject: true
+        }),
         new webpack.HotModuleReplacementPlugin()
     ],
 

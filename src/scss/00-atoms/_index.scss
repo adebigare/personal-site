@@ -43,17 +43,10 @@
 }
 
 .img-4x3 {
-	margin-top: $baseline;
-
-	@include grid-column(12);
-
-	// @include for-tablet-landscape-up {
-	// 	@include grid-column(8);
-	// }
-
-	// @include for-desktop-up {
-	// 	@include grid-column(6);
-	// }
+	display: block;
+	margin: $baseline * 2 auto;
+	width: 100%;
+	max-width: 36em;
 }
 
 .img-square {
@@ -71,14 +64,23 @@
 }
 
 .full-width {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+	@include full-width-image;
+}
+
+.img__gapped {
+	// margin-top: $baseline * 2;
+	margin-bottom: $baseline * 2;
 }
 
 .grid-container {
 	margin-top: $baseline;
+}
+
+.img__small {
+	max-width: 500px;
+
+	@include for-retina-only {
+		max-width: 250px;
+	}
+
 }

@@ -79,6 +79,13 @@
   @media (min-width: 1800px) { @content; }
 }
 
+@mixin for-retina-only {
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+      @content;
+  }
+}
+
 // Clearfix
 //
 // Nicolas Gallagher's micro clearfix hack
@@ -179,4 +186,13 @@
   background-repeat: repeat;
   mix-blend-mode: multiply;
   transform: skew(-10deg);
+}
+
+@mixin full-width-image {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }

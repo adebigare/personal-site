@@ -68,21 +68,31 @@
 
 .project-writeup {
 	margin: auto;
+	max-width: 36em;
 }
 
 .project-md {
+	display: block;
 
 	// Remove this when possible
-	p, h3, ul, li {
-		display: block;
+	p, ul{
 		margin: $baseline * 2 auto;
 		max-width: 36em;
 	}
-	ul, li {list-style-type: disc;}
-	h3 {text-align: center}
-}
 
-.project-md {
+	h3 {
+		margin: $baseline * 2 auto $baseline;
+	}
+
+	ul, li {
+		// list-style-type: disc;
+		text-align: center;
+	}
+
+	h3 {
+		text-align: center
+	}
+
 	a {
 		background-image: linear-gradient(get-color('secondary'), get-color('secondary', 'light'));
 		background-position: 0 1.3em;
