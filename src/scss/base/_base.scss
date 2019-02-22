@@ -147,6 +147,8 @@ h4, .h4 {
   font-weight: $font-weight-thin;
   font-style: italic;
   line-height: $baseline * 3;
+  color: get-color('secondary', 'dark');
+
 
   @include for-desktop-up {
     font-size: map-get-deep($font-size, 'desktop-up', 'h4');
@@ -157,6 +159,7 @@ h4, .h4 {
 h5, .h5 {
   font-size: map-get-deep($font-size, 'mobile-up', 'h5');
   font-weight: $font-weight-default;
+  font-style: italic;
 
   @include for-desktop-up {
     font-size: map-get-deep($font-size, 'desktop-up', 'h5');
@@ -195,6 +198,7 @@ blockquote {
   background: get-color('secondary', 'light');
   max-width: 36em;
   margin: auto;
+  margin-bottom: $baseline;
   padding: $baseline/2;
   font-weight: $font-weight-default;
   font-style: italic;
@@ -214,4 +218,11 @@ figcaption {
     @include grid-column(6);
     @include grid-push(6);
   }
+}
+
+.iframe {
+  max-width: 36em;
+  width: 100%;
+  max-height: 400px;
+  height: 100%;
 }

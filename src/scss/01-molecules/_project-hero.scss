@@ -35,9 +35,8 @@
  */
 .project-hero__img {
     // width: 100%;
-    min-height: $baseline * 22;
-    max-height: 75vh;
-    object-fit: none;
+    height: 60vh;
+    object-fit: cover;
     // filter: blur(2px);
     // opacity: .5;
     mix-blend-mode: overlay;
@@ -50,10 +49,11 @@
  */
 .project-hero__headline {
     position: absolute;
-    padding: $baseline 4%;
+    padding: $baseline*2 4vw;
     transition: .3s;
     bottom: 10%;
     left: -1%;
+    z-index: 1;
 
     @include for-tablet-portrait-up {
         // bottom: $baseline * 4;
@@ -61,7 +61,41 @@
         max-width: 80%;
     }
 
+    // &::before {
+    //    content: "";
+    //    position: absolute;
+    //    top: 0;
+    //    left: 0;
+    //    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9JyM1NTk0ZTcnIHN0cm9rZS13aWR0aD0nMScvPgo8L3N2Zz4K");
+    //    background-repeat: repeat;
+    //    width: 100%;
+    //    height: 1vh;
+    //    mix-blend-mode: multiply;
+    // }
+
+    &::after {
+       content: "";
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9JyM1NTk0ZTcnIHN0cm9rZS13aWR0aD0nMScvPgo8L3N2Zz4K");
+       background-repeat: repeat;
+       width: 100%;
+       height: 1vh;
+       mix-blend-mode: multiply;
+    }
+ }
+
+ .dots {
+    @include background-dots-pattern;
+    height: 35%;
+    top: 25vh;
+    left: -10vw;
+    z-index: 0;
+
     @include for-tablet-landscape-up {
+        left: -10vw;
+        width: 80%
     }
  }
 
@@ -73,8 +107,6 @@
 
 .project-hero_headline_secondary {
     background: get-color('secondary');
-    border-top: 5px solid get-color('secondary', 'dark', .3);
-    border-bottom: 5px solid get-color('secondary', 'dark', .3);
     color: $white;
 }
 

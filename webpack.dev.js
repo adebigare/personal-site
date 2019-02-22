@@ -37,6 +37,18 @@ module.exports = {
             template: 'src/html/layouts/content-project-dataswap.pug',
             inject: true
         }),
+        new HtmlWebpackPlugin({
+            filename: 'open-knowledge.html',
+            title: 'Adrienne Debigare Portfolio – Open Knowledge',
+            template: 'src/html/layouts/content-project-OpenKnowledge.pug',
+            inject: true
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'coming-soon.html',
+            title: 'Adrienne Debigare Portfolio – Coming Soon',
+            template: 'src/html/layouts/content-coming-soon.pug',
+            inject: true
+        }),
         new webpack.HotModuleReplacementPlugin()
     ],
 

@@ -2,10 +2,10 @@
 //
 //Named Welcome Headline
 //
+div.hp__email
+	span.hp__email--quip Let's Talk!
+	a.hp__email--address(href="mailto:adebigare@gmail.com") adebigare@gmail.com
 header.hp-header
-	div.hp__email.h5
-		span.hp__email--quip Let's Talk!
-		a.hp__email--address(href="mailto:adebigare@gmail.com") adebigare@gmail.com
 	img.hp__headshot(src=require('./../../assets/images/headshot-normal.png'))
 	.hp-intro
 		h4.hp__hello Hi, I'm
@@ -15,7 +15,7 @@ header.hp-header
 //
 // Homepage Module Classes
 //
-- var headlinePrimaryClasses = ['hero__headline', 'hero_headline_primary']
+- var headlineWhiteClasses = ['hero__headline', 'hero_headline_white']
 - var headlineSecondaryClasses = ['hero__headline', 'hero_headline_secondary']
 - var headlineAccentClasses = ['hero__headline', 'hero_headline_accent']
 - var headlineSecondaryAccentClasses = ['hero__headline', 'hero_headline_secondary_accent']
@@ -23,10 +23,10 @@ header.hp-header
 // First Homepage Link Module – Open Knowledge
 //
 a.hero.hero_background_ibsul.hero__link(href= `${index.openKnowledge.link}`)
-	img(class='hero__img' src=require("./../../assets/images/Day-OfEvent.png"))
+	img(class='hero__img' src=require("./../../assets/images/openknowledge-header.png"))
 
 	div.hero__text-container
-		h1(class=headlinePrimaryClasses) #{index.openKnowledge.heroTitle}
+		h1(class=headlineWhiteClasses) #{index.openKnowledge.heroTitle}
 		h3.hero__intro.hero_intro_secondary_accent #{index.openKnowledge.heroIntro}
 
 //
@@ -34,27 +34,27 @@ a.hero.hero_background_ibsul.hero__link(href= `${index.openKnowledge.link}`)
 //
 .hero.hero_background_sulcor
 	a.hero__link(href= `${index.dataSwap.link}`)
-		img(class='hero__img' src=require("./../../assets/images/Day-OfEvent.png"))
+		img(class='hero__img' src=require("./../../assets/images/dataswap-header.png"))
 	div.hero__text-container
-		h1(class=headlinePrimaryClasses) #{index.dataSwap.heroTitle}
+		h1(class=headlineWhiteClasses) #{index.dataSwap.heroTitle}
 		h3.hero__intro.hero_intro_secondary_accent #{index.dataSwap.heroIntro}
 //
 // Third Homepage Link Module – GlobeLab
 //
-.hero.hero_background_vivsul
-	a.hero__link(href= `${index.globeLab.link}`)
-		img(class='hero__img' src=require("./../../assets/images/Day-OfEvent.png"))
-	div.hero__text-container
-		h1(class=headlinePrimaryClasses) #{index.globeLab.heroTitle}
-		h3.hero__intro.hero_intro_secondary_accent #{index.globeLab.heroIntro}
+// .hero.hero_background_vivsul
+// 	a.hero__link(href= `${index.globeLab.link}`)
+// 		img(class='hero__img' src=require("./../../assets/images/Day-OfEvent.png"))
+// 	div.hero__text-container
+// 		h1(class=headlineWhiteClasses) #{index.globeLab.heroTitle}
+// 		h3.hero__intro.hero_intro_secondary_accent #{index.globeLab.heroIntro}
 
 //
 // Fourth Homepage Link Module – Digital Initiative
 //
-.hero.hero_background_vivcor
-	a.hero__link(href= `${index.digitalInitiative.link}`)
-		img(class='hero__img' src=require("./../../assets/images/Day-OfEvent.png"))
-	div.hero__text-container
-		h1(class=headlinePrimaryClasses) #{index.digitalInitiative.heroTitle}
-		h3.hero__intro.hero_intro_secondary_accent #{index.digitalInitiative.heroIntro}
+// .hero.hero_background_vivcor
+// 	a.hero__link(href= `${index.digitalInitiative.link}`)
+// 		img(class='hero__img' src=require("./../../assets/images/Day-OfEvent.png"))
+// 	div.hero__text-container
+// 		h1(class=headlineWhiteClasses) #{index.digitalInitiative.heroTitle}
+// 		h3.hero__intro.hero_intro_secondary_accent #{index.digitalInitiative.heroIntro}
 

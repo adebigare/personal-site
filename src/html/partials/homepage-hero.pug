@@ -1,0 +1,15 @@
+- var global = require('./../../assets/data/index.json')
+- var index = require('./../../assets/data/index.json')
+- var headlineWhiteClasses = ['hero__headline', 'hero_headline_white']
+- var headlineSecondaryClasses = ['hero__headline', 'hero_headline_primary']
+- var headlineAccentClasses = ['hero__headline', 'hero_headline_primary']
+- var headlineSecondaryAccentClasses = ['hero__headline', 'hero_headline_primary']
+
+a.hero.hero_background_ibsul.hero__link(href= '#')
+	img(class='hero__img' src=require("./../../assets/images/Day-OfEvent.png"))
+
+	div.hero__text-container
+		h1(class=headlineWhiteClasses) #{index.openKnowledge.heroTitle}
+		h3.hero__intro.hero_intro_secondary_accent #{index.openKnowledge.heroIntro}
+	// hr.hr_vertical << Maybe later
+

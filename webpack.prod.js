@@ -115,14 +115,32 @@ module.exports = {
             inject: true,
             file: require('./src/assets/data/index.json'),
         }),
+        // new HtmlWebpackPlugin({
+        //     filename: 'patterns.html',
+        //     title: 'Adrienne Debigare Portfolio',
+        //     template: 'src/html/patterns.pug',
+        //     inject: true,
+        //     data: {
+        //       global: require('./src/assets/data/global.json')
+        //     }
+        // }),
         new HtmlWebpackPlugin({
-            filename: 'patterns.html',
-            title: 'Adrienne Debigare Portfolio',
-            template: 'src/html/patterns.pug',
-            inject: true,
-            data: {
-              global: require('./src/assets/data/global.json')
-            }
+            filename: 'dataswap.html',
+            title: 'Adrienne Debigare Portfolio – Dataswap',
+            template: 'src/html/layouts/content-project-dataswap.pug',
+            inject: true
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'open-knowledge.html',
+            title: 'Adrienne Debigare Portfolio – Open Knowledge',
+            template: 'src/html/layouts/content-project-OpenKnowledge.pug',
+            inject: true
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'coming-soon.html',
+            title: 'Adrienne Debigare Portfolio – Coming Soon',
+            template: 'src/html/layouts/content-coming-soon.pug',
+            inject: true
         }),
         new CleanWebpackPlugin(buildPath),
         new FaviconsWebpackPlugin({

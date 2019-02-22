@@ -1,0 +1,46 @@
+.coming-soon {
+	display: block;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	margin: auto;
+	text-align: center;
+}
+
+.coming-soon__header {
+	display: block;
+	position: relative;
+	top: 15vh;
+	margin-bottom: 3rem;
+
+	font-size: 20vw;
+	font-weight: $font-weight-ultra;
+	line-height: 19vw;
+
+	color: get-color('secondary-accent');
+	background: $gradient-coral-vivacious;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	@include for-desktop-up {
+		font-size: 15vw;
+		line-height: 14vw;
+		top: 18vh;
+	}
+}
+
+.coming-soon__text {
+	position: relative;
+	top: 10vh;
+
+	@include for-desktop-up {
+		top: 13vh;
+	}
+}
+
+.coming-soon__links {
+	position: relative;
+	display: block;
+	margin-top: 5rem;
+}

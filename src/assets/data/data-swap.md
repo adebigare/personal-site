@@ -3,20 +3,20 @@
 >How might we develop a brainstorm and prototyping experience that invites inclusive participation with equitable outcomes for both organization and participant?
 
 In 2013, hackathon fever was reaching a zenith within tech circles.
-<!-- <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1709_RC01/embed_loader.js"></script>
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1709_RC01/embed_loader.js"></script>
 <script type="text/javascript">
 trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"/m/068mxn","geo":"US","time":"2004-01-01 2019-02-14"}],"category":0,"property":""}, {"exploreQuery":"date=all&geo=US&q=%2Fm%2F068mxn","guestPath":"https://trends.google.com:443/trends/embed/"});
 </script>
- -->
+
 But what started as a fun networking event for technologists over a weekend, became a semi-exploitative way for companies to [extract hundreds of hours of essentially free labor from young designers and software engineers.](https://www.emeraldinsight.com/doi/abs/10.1108/S0277-283320170000031005) 
 
 The compressed, 36-hour time frame was also proving to be suboptimal. It [excluded people](https://scholarworks.rit.edu/cgi/viewcontent.cgi?referer=https://www.google.com/&httpsredir=1&article=1867&context=other) who could not (or would not) work through an entire weekend with little sleep or downtime. Worse still, the work produced was [largely unusable in production.](https://www.fastcompany.com/3054023/why-hackathons-are-bad-for-innovation) 
 
 2013 was also a moment when human-centered organizations were starting to understand the implications of, and their lack of resources in, “big data.” There was much talk about the promise of this new technological frontier, but little idea about how to start. Fortuntately this conversation [had already been underway for several years](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2745217/) within academic circles. 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"big data","geo":"US","time":"2004-01-01 2019-02-12"}],"category":0,"property":""}, {"exploreQuery":"date=all&geo=US&q=big%20data","guestPath":"https://trends.google.com:443/trends/embed/"});
-</script> -->
+</script>
 
 ### Team
 Globelab partnered with labs from Northeastern University, MIT, and a local research non-profit called the Boston Area Research Initiative (BARI). I acted as team lead.
@@ -63,10 +63,10 @@ Over the next eight months participants and companies were tasked with developin
 
 ### My role
 
-##### I created our brand identity,
+#### I created our brand identity,
 <img class="img-4x3 img__small img__gapped" src="https://imgur.com/LCNIU0g.png" alt="Data Swap Logo">
 
-##### [designed, built, and wrote the copy for our promotional site](http://www.dataswap.adebigare.com/),
+#### [designed, built, and wrote the copy for our promotional site](http://www.dataswap.adebigare.com/),
 <img class="full-width img__gapped" alt="a photo of a tablet, smartphone and cropped laptop displaying the Dataswap homepage"
 	srcset="https://imgur.com/KYZgebV.png 480w,
 			https://imgur.com/5TrIVZG.png 960w,
@@ -80,7 +80,7 @@ Over the next eight months participants and companies were tasked with developin
            1000px"
 	src="https://imgur.com/5TrIVZG.png">
 
-##### led the event design, communications, and assisted in managing the participants through the process.
+#### led the event design, communications, and assisted in managing the participants through the process.
 <img class="img-4x3 img__gapped" alt="collage of planning and communications material"
 	srcset="https://imgur.com/5jzpApW.png 342w,
 			https://imgur.com/V4Oabv6.png 683w,
@@ -103,4 +103,4 @@ We received feedback from faculty and students that outcomes would have been g
 <aside style="font-style: italic;" class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Very excited to present findings on Friday re: campaign contributions in MA 08-12, esp in light of today&#39;s ruling on McCutcheon. <a href="https://twitter.com/Data_Swap?ref_src=twsrc%5Etfw">@Data_Swap</a></p>&mdash; camilla mahon (@camillacaros) <a href="https://twitter.com/camillacaros/status/451488811974131712?ref_src=twsrc%5Etfw">April 2, 2014</a></aside>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-We considered the experiment wildly successful. We hit all of our success metrics, and satisfaction was high among participants and companies. We generated 74 applicants (50% more than the number we had anticipated) with exceptional credentials and diverse academic backgrounds. At the end of eight months we still maintained three teams of the original six which was exactly 50% retention. Additionally, several of our participants leveraged their time with The Data Swap to secure advanced degrees with Ivy League schools, or secure places with competitive fellowships across the country.
+We considered the experiment wildly successful. We hit all of our success metrics, and satisfaction was high among participants and companies. We generated 74 applicants (50% more than the number we had anticipated) with exceptional credentials and diverse academic backgrounds. At the end of eight months we still maintained three teams of the original six which was exactly 50% retention. Additionally, several of our participants leveraged their time with The Data Swap to secure advanced degrees with Ivy League schools, or placement with competitive fellowships across the country.

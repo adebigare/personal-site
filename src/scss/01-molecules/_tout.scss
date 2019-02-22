@@ -47,7 +47,7 @@
 	position: absolute;
 	top: $baseline * 4;
 	border-radius: 2px;
-	background: get-color('secondary', 'light', map-get($named-opacity, 'mid'));
+	background: get-color('secondary');
 	// background: linear-gradient(get-color('accent', 'light', map-get($named-opacity, 'light')), get-color('accent', map-get($named-opacity, 'light')));
 	padding: $baseline;
 	mix-blend-mode: lighten;

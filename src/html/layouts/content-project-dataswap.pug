@@ -1,4 +1,4 @@
-- var headlineClasses = ['project-hero__headline', 'project-hero_headline_secondary']
+- var headlineClasses = ['project-hero__headline', 'project-hero_headline_accent']
 //include partials/hero
 // Later when bug fixed, add hero as block/extend
 include ./../partials/header
@@ -8,16 +8,17 @@ body
 	main
 
 		article.project-hero.project-hero-background_exp
-			img(class='project-hero__img' src=require("./../../assets/images/Day-OfEvent.png"))
+			img(class='full-width project-hero__img' src=require("./../../assets/images/dataswap-header.png"))
 			h2(class=headlineClasses) The Data Swap
+			div.dots
 
 		article.content
 			aside.highlights
 				.titleA
-					h3.highlights__title Technologies
+					h3.highlights__title Contributions
 				.highlights__list.dataA
 					ul
-						each item in ["HTML/CSS"]
+						each item in ["Event Management", "Communications", "Leadership", "Strategy"]
 							li.highlights__skill.p=item
 				.titleB
 					h3.highlights__title Main Skills
@@ -27,7 +28,7 @@ body
 					// 	each item in `${data.projectSkills}`
 					// 		li=item
 					ul
-						each item in ["Branding/Identity Design", "Service Design Research", "Event Management"]
+						each item in ["Web Development", "Design", "Event Planning", "Copy Writing"]
 							li.highlights__skill.p=item
 			section.project-writeup
 				.project-md

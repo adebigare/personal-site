@@ -3,14 +3,14 @@
 	"openKnowledge" :
 		{
 			"heroTitle" : "Open Knowledge",
-			"link" : "#",
+			"link" : "/open-knowledge.html",
 			"heroIntro" : "An HBS Ideas Community"
 		}
 	,
 	"dataSwap" :
 		{
 			"heroTitle" : "Data Swap",
-			"link" : "#",
+			"link" : "/data-swap.html",
 			"heroIntro" : "Reinventing Hackathons"
 		}
 	,

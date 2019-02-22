@@ -1,0 +1,24 @@
+div.atoms
+	div.scaffolding
+		h3.box-12.scaffolding-title Fonts
+		include ./../styleguide/fonts.pug
+		|
+		|
+	div.scaffolding
+		h3.box-12.scaffolding-title  Buttons
+		include ./../mixins/button.pug
+		div.grid-container
+			div.box-9
+				+button('/foo', 'button')(class="btn")
+		|
+		|
+	div.scaffolding
+		h3.box-12.scaffolding-title  Brand Colors
+		include ./../styleguide/brandcolors.pug
+		|
+		|
+	div.scaffolding
+		h3.box-12.scaffolding-title Images
+		include ./../styleguide/images.pug
+		|
+		|
