@@ -1,0 +1,10 @@
+test:
+  override:
+    - "true"
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - yarn build
+      - scp -r build/* adebigare@adebigare.com:/adebigare.com/

@@ -32,7 +32,7 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            filename: 'dataswap.html',
+            filename: 'data-swap.html',
             title: 'Adrienne Debigare Portfolio – Dataswap',
             template: 'src/html/layouts/content-project-dataswap.pug',
             inject: true
