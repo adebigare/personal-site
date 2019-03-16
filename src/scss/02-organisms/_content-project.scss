@@ -3,6 +3,19 @@
 
 }
 
+.highlights {
+	height: 90vh;
+	max-width: 36em;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include for-desktop-up {
+		width: 80%;
+	}
+}
+
 .titleA, .titleB, .dataA, .dataB {
 	display: inline-grid;
 }
@@ -13,40 +26,43 @@
 
 .dataA {
 	grid-area: dataA;
+	text-align: right;
+	justify-self: end;
+
+	// @include for-desktop-up {
+	// 	text-align: left;
+	// 	justify-self: start;
+	// }
 }
 
-.dataB { grid-area: dataB; }
+.dataB {
+	grid-area: dataB;
+	justify-self: start;
+
+	// @include for-desktop-up {
+	// 	text-align: right;
+	// }
+}
 
 
-.highlights {
+.highlights__grid {
+	position: relative;
+	padding-top: $baseline * 2;
 	display: grid;
-	grid-template-columns: .25fr 1.1fr .25fr 1fr;
-	grid-template-rows: 1fr;
-	grid-template-areas: "titleA dataA titleB dataB";
+	grid-template-columns: 1fr .25fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: " dataA titleA emptyA" "emptyC titleB dataB";
 	grid-column-gap: $baseline;
-	// margin: $baseline * 3 auto $baseline * 2;
-	max-width: 36em;
+	grid-row-gap: $baseline * 4;
+	justify-content: space-around;
 	justify-items: center;
-	width: 100%;
+	align-items: start;
 
-	padding-top: $baseline * 5;
-	padding-bottom: $baseline * 2;
-
-	@include for-tablet-portrait-up {
-		// width: 60%;
-		margin: auto;
-		justify-items: center;
-	}
-
-	@include for-tablet-landscape-up {
-		// width: 50%;
-	}
-
-	@include for-desktop-up {
-		// grid-template-columns: .25fr 2.25fr .25fr 1fr;
-		// width: 40%;
-		grid-column-gap: $baseline * 3;
-	}
+	// @include for-desktop-up {
+	// 	grid-template-columns: .25fr 1fr 1fr 1fr .25fr;
+	// 	grid-template-rows: 1fr;
+	// 	grid-template-areas: "titleA dataA empty dataB titleB";
+	// }
 }
 
 .highlights__title {
@@ -61,13 +77,11 @@
 
 .highlights__list {
 	// @include for-tablet-portrait-up {
-	align-self: start;
-	justify-self: start;
 	// }
 }
 
 .highlights__skill {
-	margin-bottom: 2px;
+	margin-bottom: $baseline;
 	border-bottom: 1px dotted;
 }
 
@@ -81,7 +95,7 @@
 
 	// Remove this when possible
 	p, ul{
-		margin: $baseline * 2 auto;
+		// margin: $baseline * 2 auto;
 		max-width: 36em;
 	}
 

@@ -35,7 +35,7 @@
  */
 .project-hero__img {
     // width: 100%;
-    height: 60vh;
+    height: 80vh;
     object-fit: cover;
     // filter: blur(2px);
     // opacity: .5;
@@ -89,7 +89,7 @@
  .dots {
     @include background-dots-pattern;
     height: 35%;
-    top: 25vh;
+    top: 40vh;
     left: -10vw;
     z-index: 0;
 

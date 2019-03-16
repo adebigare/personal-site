@@ -27,6 +27,8 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
+  display: block;
+  position: relative;
 }
 
 main, article, section {
@@ -147,7 +149,7 @@ h4, .h4 {
   font-weight: $font-weight-thin;
   font-style: italic;
   line-height: $baseline * 3;
-  color: get-color('secondary', 'dark');
+  color: get-color('accent');
 
 
   @include for-desktop-up {
@@ -193,15 +195,44 @@ hr {
 
 }
 
+// blockquote {
+//   text-align: center;
+//   // background: get-color('secondary', 'light');
+//   max-width: 36em;
+//   margin: auto;
+//   margin-bottom: $baseline;
+//   padding: $baseline/2;
+//   font-weight: $font-weight-default;
+//   font-style: italic;
+// }
+
 blockquote {
-  text-align: center;
-  background: get-color('secondary', 'light');
-  max-width: 36em;
-  margin: auto;
-  margin-bottom: $baseline;
-  padding: $baseline/2;
-  font-weight: $font-weight-default;
-  font-style: italic;
+  // background: get-color('neutral', 'light');
+  border-left: $baseline solid get-color('neutral', 'light');
+  margin: $baseline * 2 $baseline;
+  padding: $baseline/2 $baseline;
+  quotes: "\201C""\201D""\2018""\2019";
+
+  &::before {
+    color: get-color('neutral', 'light');
+    content: open-quote;
+    font-size: map-deep-get($font-size, 'mobile-up', 'h1');
+    line-height: 0.1em;
+    margin-right: 0.1em;
+    vertical-align: -0.4em;
+
+    @include for-tablet-portrait-up {
+      font-size: map-deep-get($font-size, 'tablet-up', 'h1');
+    }
+
+    @include for-desktop-up {
+      font-size: map-deep-get($font-size, 'desktop-up', 'h1');
+    }
+  }
+
+  p {
+    display: inline;
+  }
 }
 
 figure {

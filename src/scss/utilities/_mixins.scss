@@ -178,7 +178,7 @@
 //
 // Branded element – background dots
 //
-@mixin background-dots-pattern() {
+@mixin background-dots-pattern {
   position: absolute;
   width: 100%;
   content: "";

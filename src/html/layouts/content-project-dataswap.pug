@@ -14,22 +14,23 @@ body
 
 		article.content
 			aside.highlights
-				.titleA
-					h3.highlights__title Contributions
-				.highlights__list.dataA
-					ul
-						each item in ["Event Management", "Communications", "Leadership", "Strategy"]
-							li.highlights__skill.p=item
-				.titleB
-					h3.highlights__title Main Skills
-				.highlights__list.dataB
-					// TO DO: Data integration. Why is the "each" printing each letter?
-					//ul
-					// 	each item in `${data.projectSkills}`
-					// 		li=item
-					ul
-						each item in ["Web Development", "Design", "Event Planning", "Copy Writing"]
-							li.highlights__skill.p=item
+				.highlights__grid
+					.titleA
+						h3.highlights__title Contributions
+					.highlights__list.dataA
+						ul
+							each item in ["Event Management", "Design", "Development", "Communications", "Leadership", "Strategy"]
+								li.highlights__skill.p=item
+					.titleB
+						h3.highlights__title Main Skills
+					.highlights__list.dataB
+						// TO DO: Data integration. Why is the "each" printing each letter?
+						//ul
+						// 	each item in `${data.projectSkills}`
+						// 		li=item
+						ul
+							each item in ["HTML/CSS", "Identity Design", "Event Design", "Event/Project Planning", "Copy Writing", "Community Organizing"]
+								li.highlights__skill.p=item
 			section.project-writeup
 				.project-md
 					include:markdown-it(linkify html typographer) ./../../assets/data/data-swap.md
